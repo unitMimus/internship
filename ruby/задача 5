@@ -1,0 +1,13 @@
+require 'active_support/core_ext/time'
+require 'active_support/core_ext/date'
+
+def date_in_future(integer=0)
+  curtime=Time.current
+  curdate=Date.current + String.try_convert("#{integer}").to_i
+  Date::DATE_FORMATS[:dmy] = "%d-%m-%y"
+  Time::DATE_FORMATS[:hms] = "%H:%M:%S"
+  puts "#{curdate.to_formatted_s(:dmy)} #{curtime.to_formatted_s(:hms)}"
+end
+
+date_in_future([]) # => текущая дата 
+date_in_future(2) # => текущая дата + 2 дня
