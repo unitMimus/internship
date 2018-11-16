@@ -1,0 +1,12 @@
+def combine_anagrams(words_array)
+  words_array.each{|word| word=word.downcase!}	#Делаем нечувствительным к регистру
+  output=[]
+  until words_array.length == 0
+    currword = words_array.shift	#Вытаскиваем первое слово
+    output << words_array.select{|word| currword.scan(/./).sort == word.scan(/./).sort}.unshift(currword)	#Ищем другие слова с таким же количеством/набором букв, что и первое. Добавляем их, вместе с первым, в вывод.
+    words_array -= output.last	#Удаляем из начальных уже выбранные слова
+  end
+  print "#{output} \n"
+end
+
+combine_anagrams(%w[cars for potatoes racs four scar creams scream toast]) # => [["cars", "racs", "scar"], ["four"], ["for"], ["potatoes"], ["creams", "scream"]] 

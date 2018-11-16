@@ -1,0 +1,22 @@
+module Palindrolver 
+  def palindrome?
+    string = self
+    if string != nil
+      
+      #краткая запись
+      useful="#{string}".downcase.chars-("#{string}".downcase.chars-(("a".."z").to_a + ("0".."9").to_a))
+      
+      puts useful.reverse==useful #проверяем на палиндромность
+    else
+      puts false
+    end
+  end
+end
+include Palindrolver
+
+
+"A man, a plan, a canal -- Panama".palindrome?  # => true 
+"Madam, I'm Adam!".palindrome?                  # => true 
+333.palindrome?                                 # => true 
+nil.palindrome?                                 # => false 
+"Abracadabra".palindrome?                       # => false 
