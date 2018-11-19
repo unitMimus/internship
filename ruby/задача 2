@@ -1,7 +1,7 @@
 def  coincidence(array=[], range=())
-  if array.length>0 && range.to_a.length>0
-    print "#{array.keep_if{|i| range.include?(i)}}\n"
-  else  print "#{[]}\n"
+  if array.respond_to?(:length) && array.length>0 && range.to_a.length>0
+    return array.keep_if{|i| range.include?(i)}
+  else  return []
   end
 end
 

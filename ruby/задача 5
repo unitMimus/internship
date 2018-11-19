@@ -2,11 +2,9 @@ require 'active_support/core_ext/time'
 require 'active_support/core_ext/date'
 
 def date_in_future(integer=0)
-  curtime=Time.current
-  curdate=Date.current + String.try_convert("#{integer}").to_i
-  Date::DATE_FORMATS[:dmy] = "%d-%m-%y"
-  Time::DATE_FORMATS[:hms] = "%H:%M:%S"
-  puts "#{curdate.to_formatted_s(:dmy)} #{curtime.to_formatted_s(:hms)}"
+  integer.respond_to?(:integer?) ? integer : integer = 0
+  Time::DATE_FORMATS[:dmyhms] = "%d-%m-%y %H:%M:%S"
+  return Time.current.advance(days: integer).to_formatted_s(:dmyhms)
 end
 
 date_in_future([]) # => текущая дата 

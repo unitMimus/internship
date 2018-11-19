@@ -1,9 +1,9 @@
 def connect_hashes(hash1, hash2)
   if hash1.values.sum <= hash2.values.sum	#Вариант для Ruby 2.4+
   #if hash1.values.inject(:+) <= hash2.values.inject(:+)	#Вариант для Ruby до 2.4
-    print "#{hash2.merge(hash1){|key, val2, val1| val2}.keep_if{|key, val| val >= 10}.sort_by{|key,val| val}.to_h} \n"
+    return hash2.merge(hash1){|key, val2, val1| val2}.keep_if{|key, val| val >= 10}.sort_by{|key,val| val}.to_h
   else
-    print "#{hash1.merge(hash2){|key, val1, val2| val1}.keep_if{|key, val| val >= 10}.sort_by{|key,val| val}.to_h} \n"
+    return hash1.merge(hash2){|key, val1, val2| val1}.keep_if{|key, val| val >= 10}.sort_by{|key,val| val}.to_h
   end
 end
 

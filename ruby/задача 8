@@ -1,7 +1,7 @@
 def multiply_numbers(inputs="")
   output=1
   inputs=inputs.to_s.scan(/./).keep_if{|i| ("0".."9").include?(i)}.each{|i| output *=(i.to_i)}
-  print inputs.length!=0 ? "#{output} \n" : nil
+  inputs.length!=0 ? output : nil
 end
 
 multiply_numbers() # => nil 

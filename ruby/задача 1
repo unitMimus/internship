@@ -9,8 +9,8 @@ def palindrome?(string)
       #краткая запись
       useful="#{string}".downcase.chars-("#{string}".downcase.chars-(("a".."z").to_a + ("0".."9").to_a))
       
-      puts useful.reverse==useful #проверяем на палиндромность
-  else  puts false
+      return useful.reverse==useful #проверяем на палиндромность
+  else  return false
   end
 end
 

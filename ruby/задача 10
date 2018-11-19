@@ -1,7 +1,7 @@
 def count_words(string)
   counter = Hash.new(0)
   string.downcase!.scan(/\w+/).each{|word| counter[word] += 1}
-  print "#{counter} \n"
+  counter
 end
 
 count_words("A man, a plan, a canal -- Panama") # => {'a' => 3, 'man' => 1, 'canal' => 1, 'panama' => 1, 'plan' => 1} 

@@ -1,6 +1,6 @@
 def max_odd(array)
   mv= array.keep_if{|i| i.to_s.to_f%2==1}.max.to_i
-  puts mv !=0 ? mv : nil
+  return mv !=0 ? mv : nil
 end
 
 max_odd([1, 2, 3, 4, 4]) # => 3 

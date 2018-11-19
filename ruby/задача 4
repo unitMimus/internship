@@ -9,7 +9,7 @@ def sort_array(array)
       else outarr << i
     end
   }
-  print "#{outarr << min}\n"
+  outarr.length==0 ? [] : outarr << min
 end
 
 
@@ -26,7 +26,7 @@ def sort_array(array)
     end
     array.delete_at(0)
   end
-  print "#{array. << min}\n"
+  array.length==0 ? [] : array << min
 end
 =end
 
