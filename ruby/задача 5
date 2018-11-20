@@ -6,6 +6,3 @@ def date_in_future(integer=0)
   Time::DATE_FORMATS[:dmyhms] = "%d-%m-%y %H:%M:%S"
   return Time.current.advance(days: integer).to_formatted_s(:dmyhms)
 end
-
-date_in_future([]) # => текущая дата 
-date_in_future(2) # => текущая дата + 2 дня

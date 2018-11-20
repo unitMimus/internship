@@ -12,10 +12,3 @@ module Palindrolver
   end
 end
 include Palindrolver
-
-
-"A man, a plan, a canal -- Panama".palindrome?  # => true 
-"Madam, I'm Adam!".palindrome?                  # => true 
-333.palindrome?                                 # => true 
-nil.palindrome?                                 # => false 
-"Abracadabra".palindrome?                       # => false 

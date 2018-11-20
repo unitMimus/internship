@@ -13,9 +13,3 @@ def palindrome?(string)
   else  return false
   end
 end
-
-palindrome?("A man, a plan, a canal -- Panama")  # => true 
-palindrome?("Madam, I'm Adam!")                  # => true 
-palindrome?(333)                                 # => true 
-palindrome?(nil)                                 # => false 
-palindrome?("Abracadabra")                       # => false 

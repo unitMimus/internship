@@ -8,5 +8,3 @@ def combine_anagrams(words_array)
   end
   output
 end
-
-combine_anagrams(%w[cars for potatoes racs four scar creams scream toast]) # => [["cars", "racs", "scar"], ["four"], ["for"], ["potatoes"], ["creams", "scream"]] 
